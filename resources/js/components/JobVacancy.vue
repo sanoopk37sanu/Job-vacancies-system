@@ -132,7 +132,8 @@ export default {
             .then((response) => {
                 if(response.data.status=="success")
                 {
-              this.successMessage = "Job saved successfully!";
+            //   this.successMessage = "Job saved successfully!";
+              alert('Job Vacancy saved successfully')
               this.errorMessage = "";
                 }else{
 
@@ -146,10 +147,11 @@ export default {
                 (error.response?.data?.message || error.message);
               this.successMessage = "";
             });
+  this.isAddingJob = !this.isAddingJob;
+      this.isVisible = !this.isVisible;
         }
       }
-      this.isAddingJob = !this.isAddingJob;
-      this.isVisible = !this.isVisible;
+
         //this.selectedJob = null;
       } catch (error) {
         console.error("Error saving job:", error);
