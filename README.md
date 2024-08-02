@@ -8,3 +8,5 @@ Run composer install
 Set the application key by running php artisan key:generate --ansi
 Run migrations php artisan migrate
 Start local server by executing php artisan serve
+
+
