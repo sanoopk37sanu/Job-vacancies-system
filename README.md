@@ -1,10 +1,19 @@
-Installation
-Make sure that you have setup the environment properly. You will need minimum PHP 8.1, PHP’s Sodium Extension, MySQL/MariaDB, and composer.
 
-Download the project (or clone using GIT)
-Copy .env.example into .env and configure your database credentials
-Go to the project's root directory using terminal window/command prompt
-Run composer install
-Set the application key by running php artisan key:generate --ansi
-Run migrations php artisan migrate
-Start local server by executing php artisan serve
+
+
+
+
+
+## Installation
+
+1. Clone the repository.
+2. Copy .env.example into .env and configure your database credentials.
+3. Run composer install
+4. Set the application key by running php artisan key:generate --ansi.
+5. Run migrations php artisan migrate
+5. php artisan make:seeder JobSeeder
+5. php artisan make:seeder UserSeeder
+6. Run `npm install`..
+7. Run `npm run build`.
+8. Start local server by executing php artisan serve
+
