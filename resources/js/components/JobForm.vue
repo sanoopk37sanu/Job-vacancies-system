@@ -3,7 +3,7 @@
     <h2>{{ job.id ? 'Edit Job' : 'Add Job' }}</h2>
     <form @submit.prevent="handleSubmit">
          <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
+        <label for="status" class="form-label">Job</label>
          <select v-model="job.job_id" class="form-control">
       <option v-for="item in options" :key="item.id" :value="item.id">
         {{ item.job_name }}

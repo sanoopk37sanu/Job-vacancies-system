@@ -97,11 +97,17 @@ export default {
       this.isVisible = !this.isVisible;
     },
     async saveJob(description,start_date,end_date,job_id,status,id) {
-        console.log(description)
-          console.log(start_date)
+
+          let jobData = {
+            description: description,
+             end_date: end_date,
+            start_date: start_date,
+             job_id: job_id,
+             status:status
+          };
       try {
         if (id>0) {
-          axios.post(`/api/vacancy-update/${job.id}`, job)
+          axios.post(`/api/vacancy-update/${id}`, jobData)
             .then((response) => {
               if(response.data.status=="success")
                 {
@@ -118,14 +124,11 @@ export default {
                 (error.response?.data?.message || error.message);
               this.successMessage = "";
             });
+
+             this.isAddingJob = !this.isAddingJob;
+      this.isVisible = !this.isVisible;
         } else {
-          let jobData = {
-            description: description,
-             end_date: end_date,
-            start_date: start_date,
-             job_id: job_id,
-             status:status
-          };
+
  if(status)
  {
           axios.post("/api/add-vacancy", jobData)
