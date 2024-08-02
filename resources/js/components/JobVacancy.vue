@@ -35,7 +35,7 @@
   </div>
     </div>
     <div v-if="isAddingJob">
-      <JobForm v-if="selectedJob" :jobData="selectedJob" @submit="saveJob" />
+      <JobForm v-if="selectedJob" :jobData="selectedJob" @submit="saveJob"  @back="back"/>
     </div>
   </div>
 </template>
@@ -91,6 +91,10 @@ export default {
         id: "",
       };
     },
+   back(){
+   this.isAddingJob = !this.isAddingJob;
+      this.isVisible = !this.isVisible;
+   },
     editJob(job) {
       this.selectedJob =job
        this.isAddingJob = !this.isAddingJob;

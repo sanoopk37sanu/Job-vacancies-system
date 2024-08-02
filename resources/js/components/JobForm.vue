@@ -1,6 +1,9 @@
 <template>
   <div >
     <h2>{{ job.id ? 'Edit Job' : 'Add Job' }}</h2>
+     <button @click="back" class="btn btn-success mb-3 float-end"  style="text-align: right;">
+        Back
+      </button>
     <form @submit.prevent="handleSubmit">
          <div class="mb-3">
         <label for="status" class="form-label">Job</label>
@@ -92,6 +95,13 @@ export default {
       if (!this.job.start_date) this.errors.start_date = 'Start date is required.';
       if (!this.job.end_date) this.errors.end_date = 'End date is required.';
       return Object.keys(this.errors).length === 0;
+    },
+
+      back() {
+
+
+        this.$emit('back');
+
     },
     handleSubmit() {
       if (this.validateForm()) {
