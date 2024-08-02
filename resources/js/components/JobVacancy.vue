@@ -126,8 +126,8 @@ export default {
              job_id: job_id,
              status:status
           };
-
-
+ if(status)
+ {
           axios.post("/api/add-vacancy", jobData)
             .then((response) => {
                 if(response.data.status=="success")
@@ -147,9 +147,10 @@ export default {
               this.successMessage = "";
             });
         }
+      }
       this.isAddingJob = !this.isAddingJob;
       this.isVisible = !this.isVisible;
-        this.selectedJob = null;
+        //this.selectedJob = null;
       } catch (error) {
         console.error("Error saving job:", error);
       }
