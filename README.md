@@ -13,7 +13,8 @@
 5. Run migrations `php artisan migrate`
 5. `php artisan db:seed --class=JobSeeder`
 6. `php artisan db:seed --class=UserSeeder`
-7. Run `npm install`..
-8. Run `npm run build`.
-9. Start local server by executing `php artisan serve`
+7. `php artisan db:seed --class=VacancySeeder`
+8. Run `npm install`..
+9. Run `npm run build`.
+10. Start local server by executing `php artisan serve`
 
