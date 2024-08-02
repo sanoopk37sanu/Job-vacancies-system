@@ -111,7 +111,7 @@ export default {
             .then((response) => {
               if(response.data.status=="success")
                 {
-              this.successMessage = "Job Updated successfully!";
+             alert('Job Vacancy Updated successfully')
               this.errorMessage = "";
                 }else{
              this.errorMessage = "Operation Failed";
