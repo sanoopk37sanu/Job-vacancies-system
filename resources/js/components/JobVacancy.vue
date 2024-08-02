@@ -96,9 +96,11 @@ export default {
        this.isAddingJob = !this.isAddingJob;
       this.isVisible = !this.isVisible;
     },
-    async saveJob(job) {
+    async saveJob(description,start_date,end_date,job_id,status,id) {
+        console.log(description)
+          console.log(start_date)
       try {
-        if (job.id) {
+        if (id>0) {
           axios.post(`/api/vacancy-update/${job.id}`, job)
             .then((response) => {
               if(response.data.status=="success")
@@ -118,15 +120,15 @@ export default {
             });
         } else {
           let jobData = {
-            description: job.description,
-            end_date: job.end_date,
-            start_date: job.start_date,
-            job_id: job.job_id,
-            status:job.status
+            description: description,
+             end_date: end_date,
+            start_date: start_date,
+             job_id: job_id,
+             status:status
           };
 
 
-          axios.post("/api/add-vacancy", job) // Replace with your API endpoint
+          axios.post("/api/add-vacancy", jobData)
             .then((response) => {
                 if(response.data.status=="success")
                 {
@@ -145,7 +147,8 @@ export default {
               this.successMessage = "";
             });
         }
-      //  this.fetchJobs();
+      this.isAddingJob = !this.isAddingJob;
+      this.isVisible = !this.isVisible;
         this.selectedJob = null;
       } catch (error) {
         console.error("Error saving job:", error);

@@ -95,15 +95,15 @@ export default {
     },
     handleSubmit() {
       if (this.validateForm()) {
-       let jobDataInfo = {
-            description: this.job.description,
-            end_date: this.job.end_date,
-            start_date: this.job.start_date,
-            job_id: this.job.job_id,
-            status:this.job.status
-          };
+    //    let jobDataInfo = {
+    //         description: this.job.description,
+    //         end_date: this.job.end_date,
+    //         start_date: this.job.start_date,
+    //         job_id: this.job.job_id,
+    //         status:this.job.status
+    //       };
 
-        this.$emit('submit', this.jobDataInfo );
+        this.$emit('submit', this.job.description,this.job.start_date,this.job.end_date,this.job.job_id,this.job.status,this.job.id );
       }
     },  async fetchJobsList() {
       try {

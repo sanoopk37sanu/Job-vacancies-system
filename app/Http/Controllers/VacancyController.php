@@ -58,7 +58,7 @@ class VacancyController extends Controller
             ], 403);
         }
         $Vacancy = Vacancy::create($request->all());
-        event(new JobVacancyCreated($Vacancy));
+        // event(new JobVacancyCreated($Vacancy));
         $response = [
             'status' => 'success',
             'message' => 'Vacancy is added successfully.',
