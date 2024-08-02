@@ -15,5 +15,5 @@
 6. `php artisan db:seed --class=UserSeeder`
 7. Run `npm install`..
 8. Run `npm run build`.
-9. Start local server by executing php artisan serve
+9. Start local server by executing `php artisan serve`
 
