@@ -152,7 +152,7 @@ export default {
       }
     },
     async deleteJob(id) {
-        alert(id)
+
       if (confirm("Are you sure you want to delete this job?")) {
         try {
           await axios.delete(`/api/vacancy-delete/${id}`);
