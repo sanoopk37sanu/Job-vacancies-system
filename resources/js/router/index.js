@@ -1,7 +1,7 @@
 import { createRouter,createWebHistory } from "vue-router";
 
 import JobVacancy from '../components/JobVacancy.vue';
-import about from '../components/AboutPage.vue';
+
 import notfound from '../components/Notfound.vue';
 const routes=[
 
@@ -11,10 +11,6 @@ const routes=[
 
     },
     {
-        path:'/about',
-        component:about
-
-   },{
     path:'/:pathMatch(.*)*',
     component:notfound
 

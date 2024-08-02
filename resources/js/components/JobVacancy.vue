@@ -2,7 +2,7 @@
   <div>
     <div v-if="isVisible">
 
-      <button @click="createNewJob" class="btn btn-success mb-3 float-right">
+      <button @click="createNewJob" class="btn btn-success mb-3 float-right"  style="text-align: right;">
         Add Job
       </button>
     <div class="container mt-5">
